@@ -1,0 +1,37 @@
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+
+  <title>Javascript File Uploader</title>
+  
+  <link rel="stylesheet" type="text/css" href="assets/upload-frontend.css"> 
+  <script>
+  window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+
+
+</head>
+
+<body>
+
+  <div id="drop-area">
+    <form class="my-form">
+      <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+      <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+      <label class="button" for="fileElem">Select some files</label>
+    </form>
+    <progress id="progress-bar" max=100 value=0></progress>
+    <div id="gallery" /></div>
+  </div>
+  <div id="download-link">
+    <p> Unique URL to download your file </p>
+    <a href="https://testing.com/"> https://testing.com/ </a>
+  </div>
+  <script src="assets/upload.js"></script>
+</body>
+</html>
